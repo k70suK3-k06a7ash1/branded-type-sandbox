@@ -8,6 +8,7 @@ type ProductId = number & {
 
 const getProductById = (id: ProductId) => {
   // Logic to retrieve product
+  console.log({id})
 }
 
 type UserId = number
