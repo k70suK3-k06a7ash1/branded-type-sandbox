@@ -1,6 +1,6 @@
 // 必要なインポート
-import * as E from "npm:effect/data/Either";
-import type * as B from "npm:effect/data/Branded";
+import {Either as E} from "npm:effect";
+import type {Brand as B} from "npm:effect";
 
 type Positive = B.Branded<number, "Positive">;
 type NonEmptyString = B.Branded<string, "NonEmptyString">;

@@ -1,19 +1,19 @@
 // 必要なインポート
-import * as E from "npm:effect/data/Either";
-import type * as B from "npm:effect/data/Branded";
-import * as S from "npm:effect/schema/Schema";
+import {Either as E} from "npm:effect";
+import type {Brand as B} from "npm:effect";
+import {Schema as S} from "npm:effect";
 
 // Branded Typeの定義
 type Positive = B.Branded<number, "Positive">;
 type NonEmptyString = B.Branded<string, "NonEmptyString">;
 
 // Schema定義
-const PositiveSchema = S.number.pipe(
+const PositiveSchema = S.Number.pipe(
   S.greaterThan(0),
   S.brand<Positive>()
 );
 
-const NonEmptyStringSchema = S.string.pipe(
+const NonEmptyStringSchema = S.String.pipe(
   S.minLength(1),
   S.brand<NonEmptyString>()
 );
